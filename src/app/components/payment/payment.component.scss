@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+}
+
+.month-select,
+.payment-action,
+.pay-button {
+  margin: 20px auto;
+}
+
+.month-select span,
+.payment-action span {
+  display: block;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.pay-button {
+  padding: 10px;
+  width: 80%;
+  border: 1px solid black;
+}
