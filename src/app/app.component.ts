@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MenuComponent } from "./components/menu/menu.component";
-import { PaymentComponent } from "./components/payment/payment.component";
-import { GamesComponent } from "./components/games/games.component";
+import { CadastroJogadorComponent } from './components/menu/cadastro-jogador/cadastro-jogador.component';
+import { CadastroJogosComponent } from './components/menu/cadastro-jogos/cadastro-jogos.component';
+import { ListaJogadorComponent } from './components/menu/lista-jogador/lista-jogador.component';
+import { ListaJogosComponent } from './components/menu/lista-jogos/lista-jogos.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenuComponent, PaymentComponent, GamesComponent],
+  imports: [RouterOutlet, CadastroJogadorComponent, CadastroJogosComponent, ListaJogadorComponent, ListaJogosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

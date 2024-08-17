@@ -11,33 +11,35 @@ import { Observable } from 'rxjs';
 
 export class JogadorService {
 
-  http = inject(HttpClient);
+  private http: HttpClient;
 
   API = "http://localhost:8080/api/jogadores";
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    this.http = http;
+  }
 
   create(jogador: Jogador): Observable<Jogador>{
 
-    return this.http.post<Jogador>(this.API + "/create/", jogador, { responseType: 'text' as 'json'});
+    return this.http.post<Jogador>(`${this.API}/create`, jogador);
 
   }
 
   update(jogador: Jogador, id: number): Observable<Jogador>{
 
-    return this.http.put<Jogador>(this.API + "/update/" + jogador, id, { responseType: 'text' as 'json'});
+    return this.http.put<Jogador>(`${this.API}/update/${id}`, jogador);
 
   }
 
-  delete(id: number) Observable<string>{
+  delete(id: number) : Observable<string>{
 
-    return this.http.delete<string>(this.API + "/delete/" + id, { responseType: 'text' as 'json'} );
+    return this.http.delete<string>(`${this.API}/delete/${id}`, { responseType: 'text' as 'json' });
 
   }
 
   list(): Observable<Jogador[]>{
 
-    return this.http.get<Jogador[]>(this.API + "/list");
+    return this.http.get<Jogador[]>(`${this.API}/list`);
 
   }
 
