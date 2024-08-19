@@ -9,11 +9,11 @@ import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
 
-  {path: "lista/jogos", component: ListaJogosComponent },
+  {path: "", component: ListaJogosComponent },
 
-  {path: "cadastro/jogos", component: CadastroJogosComponent, canActivate: [AuthGuard] },
+  {path: "cadastro/jogos", component: CadastroJogosComponent },
 
-  {path: "cadastro/jogador", component: CadastroJogadorComponent, canActivate: [AuthGuard] },
+  {path: "cadastro/jogador", component: CadastroJogadorComponent},
 
   {path: "lista/jogador", component: ListaJogadorComponent },
 

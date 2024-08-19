@@ -1,1 +1,58 @@
-<p>cadastro-jogador works!</p>
+<br>
+<div class="container">
+
+  <div class="row">
+
+      <div class="col-lg-12 centralizar topo">
+
+        <div class="card">
+          <div class="card-body">
+
+            <h3>Cadastro de Jogador</h3>
+            <br>
+
+            <form>
+              <input type="text" id="usuario" class="form-control" [(ngModel)]="jogador.nome"/>
+              <label Label class="form-label" for="usuario">Nome</label>
+            </form>
+
+            <br>
+
+            <div>
+              @if(jogador.nome == null){
+              <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="buscarJogador()">
+                buscar Marca
+              </button>
+            }@else {
+
+              <span class="text-primary">Jogador: {{jogador.nome}}</span>
+
+              <button type="button" class="btn btn-warning btn-rounded" mdbRipple (click)="save()">
+                Trocar nome
+              </button>
+            }
+            </div>
+
+            <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="save()">
+              Salvar
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+
+  </div>
+
+</div>
+
+<ng-template #modalMarcas>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>

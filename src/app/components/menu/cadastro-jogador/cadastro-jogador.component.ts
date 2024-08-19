@@ -1,22 +1,32 @@
 
+import { CommonModule } from '@angular/common';
 import { Jogador } from '../../../models/jogador';
 import { JogadorService } from './../../../services/jogador.service';
 import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-jogador',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterOutlet],
   templateUrl: './cadastro-jogador.component.html',
   styleUrl: './cadastro-jogador.component.scss'
 })
 
 export class CadastroJogadorComponent {
+buscarJogador() {
+throw new Error('Method not implemented.');
+}
+save() {
+throw new Error('Method not implemented.');
+}
 
   JogadorService = inject(JogadorService);
 
   jogador: Jogador = new Jogador();
   lista: Jogador[] = [];
+modalRef: any;
 
 
   delete(Jogador: Jogador){

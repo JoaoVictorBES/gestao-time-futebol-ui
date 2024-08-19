@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { GamesService } from '../../../services/games.service';
 import { Jogo } from '../../../models/jogo';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-jogos',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './cadastro-jogos.component.html',
   styleUrl: './cadastro-jogos.component.scss'
 })
