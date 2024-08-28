@@ -3,6 +3,7 @@ import { Jogo } from '../../../models/jogo';
 import { GamesService } from './../../../services/games.service';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-lista-jogos',
@@ -17,6 +18,8 @@ export class ListaJogosComponent {
 
   lista: Jogo[] = [];
 
+  constructor(private http: HttpClient) { }
+
   list(){
 
     this.GamesService.list().subscribe({
@@ -29,6 +32,12 @@ export class ListaJogosComponent {
      }
 
     })
+  }
 
- }
+  ngOnInit(): void {
+    this.http.get('http://localhost:8080/api/dados')
+        .subscribe(response => {
+            console.log(response);
+        });
+}
 }

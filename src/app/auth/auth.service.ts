@@ -9,7 +9,7 @@ import { Login } from '../models/login';
 })
 export class AuthService {
 
-  private API = "http://localhost:8080/api/auth";
+  private API = "http://localhost:8080/api";
   private user: any;
 
   constructor(private http: HttpClient, private router: Router) {}

@@ -12,6 +12,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './lista-jogador.component.scss'
 })
 export class ListaJogadorComponent {
+delete(_t6: Jogador) {
+throw new Error('Method not implemented.');
+}
 
   JogadorService = inject(JogadorService);
 

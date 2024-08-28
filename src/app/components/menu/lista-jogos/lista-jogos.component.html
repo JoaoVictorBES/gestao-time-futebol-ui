@@ -1,33 +1,8 @@
-<br>
-<div class="container">
-  <div class="header">
-    <button class="arrow">&lt;</button>
-    <span class="month-label">MÊS</span>
-    <button class="arrow">&gt;</button>
-    <button class="new-game-button">NOVO JOGO</button>
-  </div>
-  <h2 class="title">LISTA DE JOGOS</h2>
-  <table class="game-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>TIME 1</th>
-        <th>TIME 2</th>
-        <th>DATA</th>
-        <th>CAMPO</th>
-        <th>HORARIO</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor=" let jogo of lista; let track = index">
-        <td>{{ jogo.id }}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <!-- Repita as linhas conforme necessário -->
-    </tbody>
-  </table>
+<div class="lista-jogos-container">
+  <h2>Lista de Jogos</h2>
+  <ul>
+    <li *ngFor="let jogo of lista">
+      {{ jogo.time }} - {{ jogo.data | date }} - {{ jogo.local }}
+    </li>
+  </ul>
 </div>

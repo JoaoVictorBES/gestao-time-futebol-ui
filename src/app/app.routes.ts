@@ -8,15 +8,16 @@ import { LoginComponent } from './components/login/login.component';
 
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-  {path: "", component: ListaJogosComponent },
+  {path: "login", component: LoginComponent },
+
+  {path: "jogos", component: ListaJogosComponent },
 
   {path: "cadastro/jogos", component: CadastroJogosComponent },
 
   {path: "cadastro/jogador", component: CadastroJogadorComponent},
 
   {path: "lista/jogador", component: ListaJogadorComponent },
-
-  { path: "login", component: LoginComponent }
 
 ];
