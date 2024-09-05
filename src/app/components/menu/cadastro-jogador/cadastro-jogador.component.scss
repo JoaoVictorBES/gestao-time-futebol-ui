@@ -24,7 +24,7 @@ input {
   width: 80%;
   padding: 8px;
   box-sizing: border-box;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 button {
@@ -40,6 +40,7 @@ button {
   letter-spacing: 1px;
   margin-left: 95px;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 button :hover{
@@ -51,15 +52,15 @@ h2{
 }
 
 .nome{
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .idade{
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .posicao{
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 @media (max-width: 600px) {
