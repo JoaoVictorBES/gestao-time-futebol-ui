@@ -1,22 +1,19 @@
-<div class="cadastro-container">
-  <h2>Cadastro de Jogador</h2>
+<div class="col-sm-12 cadastro-container">
+  <h2>CADASTRO DE JOGADOR</h2>
   <form (ngSubmit)="create()">
     <div class="form-group">
-      <label for="nome">Nome</label>
+      <label class="nome" for="nome">NOME</label>
       <input type="text" id="nome" [(ngModel)]="jogador.nome" name="nome" required />
     </div>
     <div class="form-group">
-      <label for="posicao">Posição</label>
+      <label class="posicao" for="posicao">POSIÇÃO</label>
       <input type="text" id="posicao" [(ngModel)]="jogador.posicao" name="posicao" required />
     </div>
     <div class="form-group">
-      <label for="idade">Idade</label>
-      <input type="number" id="idade" [(ngModel)]="jogador.idade" name="idade" required />
+      <label class="idade" for="idade">IDADE</label>
+      <input type="text" id="idade" [(ngModel)]="jogador.idade" name="idade" required />
     </div>
-    <div class="form-group">
-      <label for="mensalidade">Mensalidade</label>
-      <input type="number" id="mensalidade" [(ngModel)]="jogador.mensalidade" name="mensalidade" required />
-    </div>
-    <button type="submit">Salvar</button>
+
+    <button type="submit">SALVAR</button>
   </form>
 </div>

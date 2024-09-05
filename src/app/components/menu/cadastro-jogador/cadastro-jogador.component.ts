@@ -15,18 +15,12 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class CadastroJogadorComponent {
-buscarJogador() {
-throw new Error('Method not implemented.');
-}
-save() {
-throw new Error('Method not implemented.');
-}
 
   JogadorService = inject(JogadorService);
 
   jogador: Jogador = new Jogador();
   lista: Jogador[] = [];
-modalRef: any;
+  modalRef: any;
 
 
   delete(Jogador: Jogador){

@@ -22,18 +22,18 @@ export class LoginComponent {
   login() {
     if (this.loginData.username == 'admin' || this.loginData.password == '1234'){
       this.router.navigate(['/jogos'])
+    }else{
+      this.authService.login(this.loginData).subscribe({
+
+        next: user => {
+          this.authService.setUser(user);
+          this.router.navigate(['/jogos']);
+        },
+        error: err => {
+          alert('Login falhou');
+        }
+      });
     }
-
-    this.authService.login(this.loginData).subscribe({
-
-      next: user => {
-        this.authService.setUser(user);
-        this.router.navigate(['/jogos']);
-      },
-      error: err => {
-        alert('Login falhou');
-      }
-    });
 
   }
 }
