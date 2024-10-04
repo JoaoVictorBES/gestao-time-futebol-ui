@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterOutlet],
   templateUrl: './cadastro-jogador.component.html',
-  styleUrl: './cadastro-jogador.component.scss'
+  styleUrls: ['./cadastro-jogador.component.scss']
 })
 
 export class CadastroJogadorComponent {
@@ -43,7 +43,7 @@ export class CadastroJogadorComponent {
   }
 
   create(){
-    /*if(this.jogador.id > 0){
+    if(this.jogador.id > 0){
 
       this.JogadorService.update(this.jogador, this.jogador.id).subscribe({
 
@@ -57,7 +57,7 @@ export class CadastroJogadorComponent {
 
       })
 
-    }else{*/
+    }else{
 
       this.JogadorService.create(this.jogador).subscribe({
 
@@ -70,7 +70,7 @@ export class CadastroJogadorComponent {
         }
       })
 
-    
+    }
 
   }
 
@@ -90,4 +90,5 @@ export class CadastroJogadorComponent {
   }
 
 }
+
 

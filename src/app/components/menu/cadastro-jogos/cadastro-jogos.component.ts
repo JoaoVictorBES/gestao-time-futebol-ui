@@ -1,37 +1,40 @@
+import { JogosService } from './../../../services/jogos.service';
 import { Component, inject } from '@angular/core';
-import { GamesService } from '../../../services/games.service';
 import { Jogo } from '../../../models/jogo';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-jogos',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './cadastro-jogos.component.html',
-  styleUrl: './cadastro-jogos.component.scss'
+  styleUrls: ['./cadastro-jogos.component.scss']
 })
+
 export class CadastroJogosComponent {
 
-  GamesService = inject(GamesService);
+  constructor(private router: Router) {}
+
+  JogosService = inject(JogosService);
 
   jogo: Jogo = new Jogo();
 
-  create(){
+  create() {
+    this.JogosService.create(this.jogo).subscribe({
 
-    this.GamesService.create(this.jogo).subscribe({
+      next: mensagem => {
+        alert("Jogo salvo com sucesso!");
+        this.jogo = new Jogo();
+      },
 
-        next: retorno => {
-          alert('Salvo com sucesso!');
-        },
+      error: erro =>{
+        alert('Ocorreu algum erro')
+      }
 
-        error: erro => {
-          alert('Ocorreu algum erro')
-        }
-    })
-
+    });
   }
-
 }
 
 

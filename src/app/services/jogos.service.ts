@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class GamesService {
+export class JogosService {
 
   http = inject(HttpClient);
 
@@ -16,7 +16,7 @@ export class GamesService {
 
   create(jogo: Jogo): Observable<Jogo>{
 
-    return this.http.post<Jogo>(this.API + "/create/", jogo, { responseType: 'text' as 'json'});
+    return this.http.post<Jogo>(this.API + "/create", jogo, { responseType: 'text' as 'json'});
 
   }
 
@@ -26,4 +26,15 @@ export class GamesService {
 
   }
 
+  delete(id: number): Observable<void>{
+
+    return this.http.delete<void>(this.API + "/delete");
+
+  }
+
+  update(id: number, jogo: Jogo): Observable<Jogo> {
+
+    return this.http.put<Jogo>(this.API + "/update/{id}", jogo);
+
+  }
 }

@@ -2,7 +2,7 @@
 export class Jogo {
 
   id!: number;
-  data!: Date;
+  data!: string;
   local!: string;
   time!: string;
 

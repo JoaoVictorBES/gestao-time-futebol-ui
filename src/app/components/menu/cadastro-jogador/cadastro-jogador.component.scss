@@ -6,13 +6,14 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: #686d8e;
+  background-color: #223089;
 }
 
 .form-group {
   margin-bottom: 15px;
   font-size: medium;
   letter-spacing: 1px;
+  color: #ccc;
 }
 
 label {
@@ -49,6 +50,7 @@ button :hover{
 
 h2{
   text-align: center;
+  color: #ccc;
 }
 
 .nome{
@@ -76,4 +78,15 @@ h2{
     padding: 10p; /* Ajusta o tamanho do botão */
     font-size: 1rem; /* Reduz o tamanho da fonte do botão */
   }
+}
+
+.login-container-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container-img img{
+  max-width: 100%;
+  height: auto;
 }

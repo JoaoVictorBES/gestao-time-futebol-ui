@@ -12,8 +12,31 @@ ul {
 li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.jogo-info {
+  flex: 1;
+}
+
+.jogo-acoes {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #003366; /* Azul escuro */
+  color: white;
+}
+
+button:hover {
+  background-color: #cc0000; /* Vermelho ao passar o mouse */
 }

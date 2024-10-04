@@ -2,7 +2,13 @@
   <h2>Lista de Jogos</h2>
   <ul>
     <li *ngFor="let jogo of lista">
-      {{ jogo.time }} - {{ jogo.data | date }} - {{ jogo.local }}
+      <div class="jogo-info">
+        {{ jogo.time }} - {{ jogo.data | date }} - {{ jogo.local }}
+      </div>
+      <div class="jogo-acoes">
+        <button (click)="update(jogo)">Editar</button>
+        <button (click)="delete(jogo.id)">Deletar</button>
+      </div>
     </li>
   </ul>
 </div>

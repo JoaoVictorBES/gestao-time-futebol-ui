@@ -6,11 +6,13 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: #686d8e;
+  background-color: #223089;
 }
 
 .form-group {
   margin-bottom: 15px;
+  color: #ccc;
+  letter-spacing: 1px;
 }
 
 label {
@@ -43,6 +45,7 @@ button {
 
 h2{
   text-align: center;
+  color: #ccc;
 }
 
 @media (max-width: 600px) {
@@ -54,4 +57,15 @@ h2{
     font-size: 1rem;
     padding: 8px;
   }
+}
+
+.login-container-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container-img img{
+  max-width: 100%; 
+  height: auto;
 }

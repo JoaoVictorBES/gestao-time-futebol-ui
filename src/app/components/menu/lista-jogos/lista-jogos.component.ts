@@ -1,6 +1,6 @@
+import { JogosService } from './../../../services/jogos.service';
 import { CommonModule } from '@angular/common';
 import { Jogo } from '../../../models/jogo';
-import { GamesService } from './../../../services/games.service';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListaJogosComponent {
 
-  GamesService = inject(GamesService);
+  JogosService = inject(JogosService);
 
   lista: Jogo[] = [];
 
@@ -22,7 +22,7 @@ export class ListaJogosComponent {
 
   list(){
 
-    this.GamesService.list().subscribe({
+    this.JogosService.list().subscribe({
 
      next: lista => {
        this.lista = lista;
@@ -34,10 +34,29 @@ export class ListaJogosComponent {
     })
   }
 
+  delete(id: number){
+
+    if (confirm('Tem certeza que deseja deletar este jogo?')) {
+      this.JogosService.delete(id).subscribe({
+        next: () => {
+          alert('Jogo deletado com sucesso!');
+          this.list(); 
+        },
+        error: erro => {
+          alert('Erro ao deletar o jogo');
+        }
+      });
+    }
+
+  }
+
+  update(jogo: Jogo){
+
+    console.log('Editar jogo: ', jogo);
+
+  }
+
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/api/dados')
-        .subscribe(response => {
-            console.log(response);
-        });
+    this.list();
 }
 }
