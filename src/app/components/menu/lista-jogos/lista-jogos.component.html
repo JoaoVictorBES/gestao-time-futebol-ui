@@ -9,11 +9,13 @@
         <strong>Data:</strong> {{ jogo.data  }} <br>
       </div>
       <div class="jogo-acoes">
-        <button (click)="update (jogo)">Editar</button>
-        <button (click)="delete (jogo.id)">Deletar</button>
+        <button class="btn-acao" (click)="update (jogo)">Editar</button>
+        <button class="btn-acao" (click)="delete (jogo.id)">Deletar</button>
       </div>
     </li>
-  </ul>
-</div>
+    </ul>
+
+    <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
+  </div>
 
 </div>

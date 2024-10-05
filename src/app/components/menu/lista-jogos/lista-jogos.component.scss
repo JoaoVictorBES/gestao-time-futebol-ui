@@ -8,6 +8,11 @@
   box-shadow: 5px 5px 5px 2px #003366;
 }
 
+.box-container {
+  flex-direction: column;
+  align-items: center;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -25,7 +30,7 @@ li {
 
 .jogo-info {
   flex: 1;
-  
+
 }
 
 .jogo-acoes {
@@ -33,15 +38,26 @@ li {
   gap: 10px;
 }
 
-button {
+.btn-acao {
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  background-color: #003366; /* Azul escuro */
+  background-color: #003366;
   color: white;
 }
 
 button:hover {
-  background-color: #cc0000; /* Vermelho ao passar o mouse */
+  background-color: #cc0000;
+}
+
+.btn-menu{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #003366;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
 }

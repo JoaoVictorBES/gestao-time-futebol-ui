@@ -65,5 +65,11 @@ export class ListaJogosComponent {
 
   ngOnInit(): void {
     this.list();
-}
+  }
+
+  navMenu(rota: string){
+
+    this.router.navigate(['/menu']);
+  }
+
 }
