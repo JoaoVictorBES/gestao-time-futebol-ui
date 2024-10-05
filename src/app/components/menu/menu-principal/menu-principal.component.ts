@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-menu-principal',
@@ -13,5 +13,15 @@ import { RouterOutlet } from '@angular/router';
 export class MenuPrincipalComponent {
 
   constructor(private http: HttpClient) { }
+
+  router = inject(Router);
+
+  navListaJogos(rota: string) {
+    this.router.navigate(['/jogos']);
+  }
+
+  navListaJogadores(rota: string){
+    this.router.navigate(['lista/jogador'])
+  }
 
 }

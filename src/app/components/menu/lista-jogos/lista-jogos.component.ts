@@ -3,7 +3,7 @@ import { JogoService } from '../../../services/jogo.service';
 import { CommonModule } from '@angular/common';
 import { Jogo } from '../../../models/jogo';
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -20,6 +20,8 @@ export class ListaJogosComponent {
   listaDeJogos: Jogo[] = [];
 
   jogo: Jogo = new Jogo();
+
+  router = inject(Router);
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +41,7 @@ export class ListaJogosComponent {
   }
 
   delete(id: number){
-
+    console.log('ID para deletar:', id);
     if (confirm('Tem certeza que deseja deletar este jogo?')) {
       this.JogoService.delete(id).subscribe({
         next: () => {
@@ -47,6 +49,7 @@ export class ListaJogosComponent {
           this.list();
         },
         error: erro => {
+          console.error('Erro ao deletar o jogo', erro);
           alert('Erro ao deletar o jogo');
         }
       });
@@ -56,7 +59,7 @@ export class ListaJogosComponent {
 
   update(jogo: Jogo){
 
-      
+    this.router.navigate(['/cadastro/jogos/', jogo.id]);
 
   }
 

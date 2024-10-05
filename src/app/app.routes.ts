@@ -17,6 +17,8 @@ export const routes: Routes = [
 
   {path: "jogos", component: ListaJogosComponent },
 
+  {path: "cadastro/jogos/:id", component: CadastroJogosComponent },
+
   {path: "cadastro/jogos", component: CadastroJogosComponent },
 
   {path: "cadastro/jogador", component: CadastroJogadorComponent},

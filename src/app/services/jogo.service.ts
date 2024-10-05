@@ -16,25 +16,30 @@ export class JogoService {
 
   create(jogo: Jogo): Observable<Jogo>{
 
-    return this.http.post<Jogo>(this.API + "/create", jogo, { responseType: 'text' as 'json'});
+    return this.http.post<Jogo>(`${this.API}/create`, jogo, { responseType: 'text' as 'json'});
 
   }
 
   list(): Observable<Jogo[]>{
 
-    return this.http.get<Jogo[]>(this.API + "/list");
+    return this.http.get<Jogo[]>(`${this.API}/list`);
 
   }
 
   delete(id: number): Observable<void>{
 
-    return this.http.delete<void>(this.API + "/delete");
+    return this.http.delete<void>(`${this.API}/delete/${id}`);
 
   }
 
   update(id: number, jogo: Jogo): Observable<Jogo> {
 
-    return this.http.put<Jogo>(this.API + "/update/{id}", jogo);
+    return this.http.put<Jogo>(`${this.API}/update/${id}`, jogo);
 
   }
+
+  findById(id: number): Observable<Jogo> {
+    return this.http.get<Jogo>(`${this.API}/${id}`);
+  }
+
 }
