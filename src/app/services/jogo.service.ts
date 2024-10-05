@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class JogosService {
+export class JogoService {
 
   http = inject(HttpClient);
 
@@ -22,7 +22,7 @@ export class JogosService {
 
   list(): Observable<Jogo[]>{
 
-    return this.http.get<Jogo[]>(this.API + "/list/");
+    return this.http.get<Jogo[]>(this.API + "/list");
 
   }
 

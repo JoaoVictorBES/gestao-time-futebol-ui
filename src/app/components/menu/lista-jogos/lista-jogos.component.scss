@@ -1,7 +1,11 @@
-.lista-jogos-container {
-  width: 400px;
+.list-container {
+  width: 600px;
   margin: 0 auto;
   padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 5px 5px 5px 2px #003366;
 }
 
 ul {
@@ -21,6 +25,7 @@ li {
 
 .jogo-info {
   flex: 1;
+  
 }
 
 .jogo-acoes {

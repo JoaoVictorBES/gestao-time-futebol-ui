@@ -21,13 +21,13 @@ export class LoginComponent {
 
   login() {
     if (this.loginData.username == 'admin' || this.loginData.password == '1234'){
-      this.router.navigate(['/jogos'])
+      this.router.navigate(['/menu'])
     }else{
       this.authService.login(this.loginData).subscribe({
 
         next: user => {
           this.authService.setUser(user);
-          this.router.navigate(['/jogos']);
+          this.router.navigate(['/menu']);
         },
         error: err => {
           alert('Login falhou');

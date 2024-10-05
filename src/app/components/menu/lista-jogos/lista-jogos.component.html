@@ -1,9 +1,12 @@
-<div class="lista-jogos-container">
-  <h2>Lista de Jogos</h2>
-  <ul>
-    <li *ngFor="let jogo of lista">
+<div class="list-container" *ngIf="listaDeJogos.length > 0; else null">
+
+  <div class="box-container">
+    <ul>
+    <li *ngFor="let jogo of listaDeJogos">
       <div class="jogo-info">
-        {{ jogo.time }} - {{ jogo.data | date }} - {{ jogo.local }}
+        <strong>Adversário:</strong> {{ jogo.time }} <br>
+        <strong>Local:</strong> {{ jogo.local }} <br>
+        <strong>Data:</strong> {{ jogo.data  }} <br>
       </div>
       <div class="jogo-acoes">
         <button (click)="update(jogo)">Editar</button>
@@ -11,4 +14,6 @@
       </div>
     </li>
   </ul>
+</div>
+
 </div>

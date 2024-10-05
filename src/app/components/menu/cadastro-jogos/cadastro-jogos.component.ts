@@ -1,4 +1,4 @@
-import { JogosService } from './../../../services/jogos.service';
+import { JogoService } from '../../../services/jogo.service';
 import { Component, inject } from '@angular/core';
 import { Jogo } from '../../../models/jogo';
 import { CommonModule } from '@angular/common';
@@ -17,16 +17,17 @@ export class CadastroJogosComponent {
 
   constructor(private router: Router) {}
 
-  JogosService = inject(JogosService);
+  JogoService = inject(JogoService);
 
   jogo: Jogo = new Jogo();
 
   create() {
-    this.JogosService.create(this.jogo).subscribe({
+    this.JogoService.create(this.jogo).subscribe({
 
       next: mensagem => {
         alert("Jogo salvo com sucesso!");
         this.jogo = new Jogo();
+        this.router.navigate(['/jogos'])
       },
 
       error: erro =>{
