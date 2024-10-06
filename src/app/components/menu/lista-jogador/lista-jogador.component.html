@@ -1,10 +1,11 @@
-<div class="lista-jogador-container">
-  <h2>Lista de Jogadores</h2>
-  <ul>
-    <li *ngFor="let jogador of lista">
-      {{ jogador.nome }} - {{ jogador.posicao }} - {{ jogador.idade }} anos
-      <button (click)="delete(jogador)">Deletar</button>
-    </li>
-  </ul>
+<div class="box-container" *ngIf="listaDeJogo.length > 0; else null">
+
+  <div *ngFor="let jogador of jogadores">
+    <strong>Nome:</strong> {{ jogador.nome }} <br>
+    <strong>Posição:</strong> {{ jogador.posicao }} <br>
+    <strong>Idade:</strong> {{ jogador.idade }} <br>
+    <strong>Gols:</strong> {{ jogador.gols }} <br>
+    <strong>Assistências:</strong> {{ jogador.assistencias }} <br>
+  </div>
 </div>
 

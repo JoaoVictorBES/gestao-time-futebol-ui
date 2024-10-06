@@ -3,6 +3,9 @@ import { JogadorService } from '../../../services/jogador.service';
 import { Jogador } from '../../../models/jogador';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { ListaJogosComponent } from '../lista-jogos/lista-jogos.component';
+import { HttpClient } from '@angular/common/http';
+import { get } from 'http';
 
 @Component({
   selector: 'app-lista-jogador',
@@ -12,13 +15,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './lista-jogador.component.scss'
 })
 export class ListaJogadorComponent {
-delete(_t6: Jogador) {
-throw new Error('Method not implemented.');
-}
 
   JogadorService = inject(JogadorService);
 
   lista: Jogador[] = [];
+
+  listaDeJogo = ListaJogosComponent;
+
+  jogadores: any;
 
   list(){
 
@@ -34,5 +38,18 @@ throw new Error('Method not implemented.');
     })
 
  }
+
+ adicionarGol(id: number) {
+  this.JogadorService.adicionarGol(id).subscribe(jogadorAtualizado => {
+
+  });
+}
+
+adicionarAssistencia(id: number) {
+  this.JogadorService.adicionarAssistencia(id).subscribe(jogadorAtualizado => {
+
+  });
+}
+
 
 }
