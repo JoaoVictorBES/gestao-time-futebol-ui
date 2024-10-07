@@ -1,11 +1,26 @@
-<div class="box-container" *ngIf="listaDeJogo.length > 0; else null">
+<div class="box-container" *ngIf="jogadores.length > 0; else null">
 
-  <div *ngFor="let jogador of jogadores">
-    <strong>Nome:</strong> {{ jogador.nome }} <br>
-    <strong>Posição:</strong> {{ jogador.posicao }} <br>
-    <strong>Idade:</strong> {{ jogador.idade }} <br>
-    <strong>Gols:</strong> {{ jogador.gols }} <br>
-    <strong>Assistências:</strong> {{ jogador.assistencias }} <br>
+  <div class="list-container">
+
+    <div class="list-group" *ngFor="let jogador of jogadores">
+
+      <div class="jogador-group">
+        <p class="jogador-info"><b>Nome:</b> {{ jogador.nome }}</p>
+        <p class="jogador-info"><b>Posição:</b> {{ jogador.posicao }}</p>
+        <p class="jogador-info"><b>Idade:</b> {{ jogador.idade }}</p>
+        <p class="jogador-info"><b>Gols:</b> {{ jogador.gols || 0 }}</p>
+        <p class="jogador-info"><b>Assistências:</b>{{ jogador.assistencias || 0 }}</p>
+      </div>
+
+      <div class="btn-group">
+        <button (click)="adicionarGol(jogador.id)">Adicionar Gol</button>
+        <button (click)="adicionarAssistencia(jogador.id)">Adicionar Assistência</button>
+      </div>
+
+    </div>
+    
+    <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
   </div>
+
 </div>
 

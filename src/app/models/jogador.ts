@@ -6,6 +6,6 @@ export class Jogador {
   nome!: string;
   posicao!: string;
   idade!: number;
-  gol!: number;
-  assistencia!: number;
+  gols!: number;
+  assistencias!: number;
 }

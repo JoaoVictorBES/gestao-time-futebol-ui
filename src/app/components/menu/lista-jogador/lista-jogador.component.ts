@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { JogadorService } from '../../../services/jogador.service';
 import { Jogador } from '../../../models/jogador';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ListaJogosComponent } from '../lista-jogos/lista-jogos.component';
 import { HttpClient } from '@angular/common/http';
 import { get } from 'http';
@@ -16,40 +16,48 @@ import { get } from 'http';
 })
 export class ListaJogadorComponent {
 
-  JogadorService = inject(JogadorService);
+      JogadorService = inject(JogadorService);
 
-  lista: Jogador[] = [];
+      jogadores: Jogador[] = [];
 
-  listaDeJogo = ListaJogosComponent;
+      router = inject(Router);
 
-  jogadores: any;
 
-  list(){
+      constructor(private http: HttpClient) { }
 
-    this.JogadorService.list().subscribe({
+      ngOnInit() {
+        this.list();
+      }
 
-     next: lista => {
-       this.lista = lista;
-     },
-     error: erro => {
-       alert('Ocorreu algum erro')
-     }
+      list(){
 
-    })
+        this.JogadorService.list().subscribe({
 
- }
+        next: lista => {
+          this.jogadores = lista;
+        },
+        error: erro => {
+          alert('Ocorreu algum erro')
+        }
 
- adicionarGol(id: number) {
-  this.JogadorService.adicionarGol(id).subscribe(jogadorAtualizado => {
+        })
 
-  });
-}
+    }
 
-adicionarAssistencia(id: number) {
-  this.JogadorService.adicionarAssistencia(id).subscribe(jogadorAtualizado => {
+    adicionarGol(id: number) {
+      this.JogadorService.adicionarGol(id).subscribe(jogadorAtualizado => {
 
-  });
-}
+      });
+    }
 
+    adicionarAssistencia(id: number) {
+      this.JogadorService.adicionarAssistencia(id).subscribe(jogadorAtualizado => {
+
+      });
+    }
+    navMenu(rota: string){
+
+      this.router.navigate(['/menu']);
+    }
 
 }

@@ -41,7 +41,7 @@ export class ListaJogosComponent {
   }
 
   delete(id: number){
-    console.log('ID para deletar:', id);
+    
     if (confirm('Tem certeza que deseja deletar este jogo?')) {
       this.JogoService.delete(id).subscribe({
         next: () => {
