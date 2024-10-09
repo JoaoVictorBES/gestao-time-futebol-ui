@@ -4,7 +4,7 @@ import { Jogador } from '../../../models/jogador';
 import { JogadorService } from './../../../services/jogador.service';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-jogador',
@@ -18,8 +18,12 @@ export class CadastroJogadorComponent {
 
   JogadorService = inject(JogadorService);
 
+  router = inject(Router);
+
   jogador: Jogador = new Jogador();
+
   lista: Jogador[] = [];
+
   modalRef: any;
 
 
@@ -63,6 +67,7 @@ export class CadastroJogadorComponent {
 
         next: retorno => {
           alert('Salvo com sucesso!');
+          this.list();
         },
 
         error: erro => {
@@ -87,6 +92,11 @@ export class CadastroJogadorComponent {
 
      })
 
+  }
+
+  navMenu(rota: string){
+
+    this.router.navigate(['/menu']);
   }
 
 }

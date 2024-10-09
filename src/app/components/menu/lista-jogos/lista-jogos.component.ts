@@ -41,7 +41,7 @@ export class ListaJogosComponent {
   }
 
   delete(id: number){
-    
+
     if (confirm('Tem certeza que deseja deletar este jogo?')) {
       this.JogoService.delete(id).subscribe({
         next: () => {
@@ -72,4 +72,8 @@ export class ListaJogosComponent {
     this.router.navigate(['/menu']);
   }
 
+  navCadastro(rota: string){
+
+    this.router.navigate(['/cadastro/jogos']);
+  }
 }

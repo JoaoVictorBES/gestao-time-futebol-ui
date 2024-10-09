@@ -1,6 +1,6 @@
 <div class="cadastro-jogos-container">
   <div class="logo-container">
-    <img src="C:\Users\55139\gestao-spy-ui\src\app\assets\football-club-team-emblem-soccer-badge-shield-logo-football-team-game-club-shield-background-free-vector.jpg" alt="spy-logo">
+    
   </div>
 
   <h2>CADASTRO DE JOGOS</h2>
@@ -21,6 +21,11 @@
       <div class="form-group">
         <label for="data" class="form-label">Data</label>
         <input type="text" id="data" [(ngModel)]="jogo.data" name="data" class="form-input" placeholder="Data do jogo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="hora" class="form-label">Hora</label>
+        <input type="text" id="data" [(ngModel)]="jogo.hora" name="hora" class="form-input" placeholder="Horário" required>
       </div>
 
       <button type="submit" class="btn-submit">Salvar</button>

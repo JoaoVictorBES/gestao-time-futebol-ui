@@ -45,19 +45,42 @@ export class ListaJogadorComponent {
     }
 
     adicionarGol(id: number) {
-      this.JogadorService.adicionarGol(id).subscribe(jogadorAtualizado => {
+      this.JogadorService.adicionarGol(id).subscribe({
+
+        next: jogadorAtualizado => {
+          alert(`Gol adicionado para ${jogadorAtualizado.nome}!`);
+          this.list();
+        },
+
+        error: erro => {
+          alert('Erro ao adicionar gol');
+        }
 
       });
     }
 
     adicionarAssistencia(id: number) {
-      this.JogadorService.adicionarAssistencia(id).subscribe(jogadorAtualizado => {
+      this.JogadorService.adicionarAssistencia(id).subscribe({
 
+        next: jogadorAtualizado => {
+          alert(`Assistência adicionada para ${jogadorAtualizado.nome}!`);
+          this.list();
+        },
+
+        error: erro => {
+          alert('Erro ao adicionar assistência');
+        }
       });
     }
+
     navMenu(rota: string){
 
       this.router.navigate(['/menu']);
+    }
+
+    navCadastro(rota: string){
+
+      this.router.navigate(['/cadastro/jogador']);
     }
 
 }

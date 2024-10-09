@@ -5,5 +5,5 @@ export class Jogo {
   data!: string;
   local!: string;
   time!: string;
-
+  hora!: string;
 }

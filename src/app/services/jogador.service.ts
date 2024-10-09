@@ -44,11 +44,15 @@ export class JogadorService {
   }
 
   adicionarGol(id: number): Observable<Jogador> {
+
     return this.http.put<Jogador>(`${this.API}/${id}/gol`, {});
+
   }
 
   adicionarAssistencia(id: number): Observable<Jogador> {
-    return this.http.put<Jogador>(`${this.API}/${id}/assistencia`, {});
+
+    return this.http.put<Jogador>(`${this.API}/${id}/assistencia/`, {});
+
   }
 
 }

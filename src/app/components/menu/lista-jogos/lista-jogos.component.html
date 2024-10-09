@@ -7,6 +7,7 @@
         <strong>Adversário:</strong> {{ jogo.time }} <br>
         <strong>Local:</strong> {{ jogo.local }} <br>
         <strong>Data:</strong> {{ jogo.data  }} <br>
+        <strong>Hora:</strong> {{ jogo.hora }} <br>
       </div>
       <div class="btn-group">
         <button class="btn-acao" (click)="update (jogo)">Editar</button>
@@ -15,7 +16,11 @@
     </li>
     </ul>
 
-    <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
+    <div class="btn-group">
+      <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
+      <button class="btn-menu" (click)="navCadastro('/cadastro/jogos')"> ADICIONAR JOGO </button>
+    </div>
+
   </div>
 
 </div>

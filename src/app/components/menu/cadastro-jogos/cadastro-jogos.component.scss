@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
@@ -34,22 +34,22 @@ h2 {
   color: #003366;
   text-align: center;
   margin-bottom: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Formulário */
 .form {
   display: flex;
   flex-direction: column;
-  width: 1005;
+  width: 100%;
   align-items: center;
 }
 
 .form-label {
-  font-size: 16px;
-  color: #003366; /* Azul escuro */
+  font-size: 18px;
+  color: #003366;
   margin-bottom: 8px;
-  width: 100%;
-  max-width: 300px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-input {
@@ -85,7 +85,7 @@ h2 {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
-  width: 100%;
+  max-width: fit-content;
 }
 
 .btn-submit:hover {
