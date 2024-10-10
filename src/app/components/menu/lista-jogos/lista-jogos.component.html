@@ -9,9 +9,8 @@
         <strong>Data:</strong> {{ jogo.data  }} <br>
         <strong>Hora:</strong> {{ jogo.hora }} <br>
       </div>
-      <div class="btn-group">
-        <button class="btn-acao" (click)="update (jogo)">Editar</button>
-        <button class="btn-acao" (click)="delete (jogo.id)">Deletar</button>
+      <div>
+        <button class="btn-acao" (click)="viewDetails(jogo.id)">Ver Detalhes</button>
       </div>
     </li>
     </ul>

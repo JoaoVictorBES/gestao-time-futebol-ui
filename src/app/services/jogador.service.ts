@@ -43,6 +43,10 @@ export class JogadorService {
 
   }
 
+  findById(id: number): Observable<Jogador> {
+    return this.http.get<Jogador>(`${this.API}/${id}`);
+  }
+
   adicionarGol(id: number): Observable<Jogador> {
 
     return this.http.put<Jogador>(`${this.API}/${id}/gol`, {});

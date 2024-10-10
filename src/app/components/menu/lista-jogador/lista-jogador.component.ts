@@ -44,6 +44,29 @@ export class ListaJogadorComponent {
 
     }
 
+    delete(id: number){
+
+      if (confirm('Tem certeza que deseja deletar este jogador?')) {
+        this.JogadorService.delete(id).subscribe({
+          next: () => {
+            alert('Jogo deletado com sucesso!');
+            this.list();
+          },
+          error: erro => {
+            console.error('Erro ao deletar o jogador', erro);
+            alert('Erro ao deletar o jogador');
+          }
+        });
+      }
+
+    }
+
+    update(jogador: Jogador){
+
+      this.router.navigate(['/cadastro/jogador/', jogador.id]);
+
+    }
+
     adicionarGol(id: number) {
       this.JogadorService.adicionarGol(id).subscribe({
 

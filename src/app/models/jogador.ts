@@ -8,4 +8,5 @@ export class Jogador {
   idade!: number;
   gols!: number;
   assistencias!: number;
+  imagemUrl!: string;
 }

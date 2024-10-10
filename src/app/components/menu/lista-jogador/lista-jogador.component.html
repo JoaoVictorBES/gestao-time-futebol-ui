@@ -11,12 +11,12 @@
         <p class="jogador-info"><b>Gols:</b> {{ jogador.gols || 0 }}</p>
         <p class="jogador-info"><b>Assistências:</b>{{ jogador.assistencias || 0 }}</p>
       </div>
+      <img [src]="jogador.imagemUrl" alt="{{jogador.nome}}" class="jogador-imagem" />
 
       <div class="btn-group">
-        <button (click)="adicionarGol(jogador.id)">Adicionar Gol</button>
-        <button (click)="adicionarAssistencia(jogador.id)">Adicionar Assistência</button>
+        <button class="btn-acao" (click)="update (jogador)">Editar</button>
+        <button class="btn-acao" (click)="delete (jogador.id)">Deletar</button>
       </div>
-
     </div>
 
     <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>

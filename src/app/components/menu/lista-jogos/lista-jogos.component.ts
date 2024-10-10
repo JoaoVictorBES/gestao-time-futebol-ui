@@ -76,4 +76,9 @@ export class ListaJogosComponent {
 
     this.router.navigate(['/cadastro/jogos']);
   }
+
+  viewDetails(id: number) {
+    this.router.navigate(['/jogos', id]);
+  }
+
 }
