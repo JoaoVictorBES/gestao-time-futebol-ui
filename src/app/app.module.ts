@@ -4,6 +4,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { routes } from './app.routes';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    RouterOutlet
+    RouterOutlet,
+    MatButtonModule
   ],
   providers: [provideHttpClient(withFetch())],
   bootstrap: []

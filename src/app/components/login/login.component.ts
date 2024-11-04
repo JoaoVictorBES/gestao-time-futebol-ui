@@ -1,3 +1,4 @@
+import { LoginService } from './../../auth/login.service';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
@@ -16,24 +17,28 @@ import { RouterOutlet } from '@angular/router';
 export class LoginComponent {
   authService = inject(AuthService);
   router = inject(Router);
+  LoginService = inject(LoginService);
+  login: Login = new Login();
 
-  loginData: Login = new Login();
+  constructor() {
+    this.LoginService.removerToken();
+  }
 
-  login() {
-    if (this.loginData.username == 'admin' || this.loginData.password == '1234'){
-      this.router.navigate(['/menu'])
-    }else{
-      this.authService.login(this.loginData).subscribe({
+  logar() {
 
-        next: user => {
-          this.authService.setUser(user);
+    this.LoginService.logar(this.login).subscribe({
+      next: token => {
+        if(token){
+          this.LoginService.addToken(token);
           this.router.navigate(['/menu']);
-        },
-        error: err => {
-          alert('Login falhou');
+        }else{
+          alert('Usuário ou senha incorretos');
         }
-      });
-    }
+      },
+      error: erro => {
+        alert('deu erro')
+      }
+    });
 
   }
 }

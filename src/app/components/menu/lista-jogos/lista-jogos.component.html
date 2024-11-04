@@ -17,7 +17,11 @@
 
     <div class="btn-group">
       <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
-      <button class="btn-menu" (click)="navCadastro('/cadastro/jogos')"> ADICIONAR JOGO </button>
+
+      @if(loginService.hasPermission("ADMIN")){
+        <button class="btn-menu" (click)="navCadastro('/cadastro/jogos')" href="cadastro/jogos"> ADICIONAR JOGO </button>
+      }
+
     </div>
 
   </div>

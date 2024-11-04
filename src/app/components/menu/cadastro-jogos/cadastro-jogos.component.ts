@@ -1,3 +1,4 @@
+import { LoginService } from './../../../auth/login.service';
 import { JogoService } from '../../../services/jogo.service';
 import { Component, inject } from '@angular/core';
 import { Jogo } from '../../../models/jogo';
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 
 export class CadastroJogosComponent {
 
+  loginService = inject(LoginService);
 
   JogoService = inject(JogoService);
 
@@ -83,7 +85,7 @@ export class CadastroJogosComponent {
       }
     });
   }
-  
+
 }
 
 

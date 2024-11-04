@@ -1,27 +1,39 @@
-<div class="box-container" *ngIf="jogadores.length > 0; else null">
+<body class="container">
 
-  <div class="list-container">
+  <aside class="sidebar">
+    <div class="icon"></div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+  </aside>
+  
+  <div class="box-container" *ngIf="jogadores.length > 0; else null">
 
-    <div class="list-group" *ngFor="let jogador of jogadores">
+    <div class="list-container">
 
-      <div class="jogador-group">
-        <p class="jogador-info"><b>Nome:</b> {{ jogador.nome }}</p>
-        <p class="jogador-info"><b>Posição:</b> {{ jogador.posicao }}</p>
-        <p class="jogador-info"><b>Idade:</b> {{ jogador.idade }}</p>
-        <p class="jogador-info"><b>Gols:</b> {{ jogador.gols || 0 }}</p>
-        <p class="jogador-info"><b>Assistências:</b>{{ jogador.assistencias || 0 }}</p>
+      <div class="list-group" *ngFor="let jogador of jogadores">
+
+        <div class="jogador-group">
+          <p class="jogador-info"><b>Nome:</b> {{ jogador.nome }}</p>
+          <p class="jogador-info"><b>Posição:</b> {{ jogador.posicao }}</p>
+          <p class="jogador-info"><b>Idade:</b> {{ jogador.idade }}</p>
+          <p class="jogador-info"><b>Gols:</b> {{ jogador.gols || 0 }}</p>
+          <p class="jogador-info"><b>Assistências:</b>{{ jogador.assistencias || 0 }}</p>
+        </div>
+        <img [src]="jogador.imagemUrl" alt="{{jogador.nome}}" class="jogador-imagem" />
+
+        <div class="btn-group">
+          <button class="btn-acao" (click)="update (jogador)">Editar</button>
+          <button class="btn-acao" (click)="delete (jogador.id)">Deletar</button>
+        </div>
       </div>
-      <img [src]="jogador.imagemUrl" alt="{{jogador.nome}}" class="jogador-imagem" />
 
-      <div class="btn-group">
-        <button class="btn-acao" (click)="update (jogador)">Editar</button>
-        <button class="btn-acao" (click)="delete (jogador.id)">Deletar</button>
-      </div>
+      <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
+      <button class="btn-menu" (click)="navCadastro('/cadastro/jogador')"> ADICIONAR JOGADOR </button>
     </div>
 
-    <button class="btn-menu" (click)="navMenu('/menu')"> MENU </button>
-    <button class="btn-menu" (click)="navCadastro('/cadastro/jogador')"> ADICIONAR JOGADOR </button>
   </div>
+</body>
 
-</div>
 

@@ -1,0 +1,13 @@
+<!-- Exibe as informações do jogo -->
+<div class="jogo-info">
+  <p><strong>Resultado:</strong> {{ jogo.resultado }}</p>
+</div>
+
+<div class="eventos-lista">
+  <h3>Eventos do Jogo</h3>
+  <ul>
+    <li *ngFor="let evento of jogo.eventos">
+      {{ evento.tipoEvento }} por {{ evento.jogador.nome }}
+    </li>
+  </ul>
+</div>

@@ -5,6 +5,7 @@ import { Jogo } from '../../../models/jogo';
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { LoginService } from '../../../auth/login.service';
 
 @Component({
   selector: 'app-lista-jogos',
@@ -14,6 +15,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './lista-jogos.component.scss'
 })
 export class ListaJogosComponent {
+
+  loginService = inject(LoginService);
 
   JogoService = inject(JogoService);
 
@@ -78,7 +81,7 @@ export class ListaJogosComponent {
   }
 
   viewDetails(id: number) {
-    this.router.navigate(['/jogos', id]);
+    this.router.navigate(['/eventos', id]);
   }
 
 }

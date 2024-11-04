@@ -35,7 +35,7 @@ export class CadastroJogadorComponent {
           this.jogador = jogador;
         },
         error: (err) => {
-          console.error('Erro ao carregar o jogo');
+          console.error('Erro ao carregar o jogador');
         }
       });
     }

@@ -2,7 +2,7 @@
 
 export class Jogador {
 
-  id! :number;
+  id!: number;
   nome!: string;
   posicao!: string;
   idade!: number;

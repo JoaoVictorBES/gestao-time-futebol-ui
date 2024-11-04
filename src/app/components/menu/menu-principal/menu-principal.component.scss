@@ -1,13 +1,14 @@
 .menu-container {
-  width: 50%;
+  width: 300px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background-color: #223089;
   text-align: center;
+  margin-top: 5rem;
 }
 
 .menu-options {
@@ -22,7 +23,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #003366;
+  background-color: #c50707;
   color: white;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

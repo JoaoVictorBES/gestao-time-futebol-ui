@@ -6,6 +6,8 @@ import { ListaJogadorComponent } from './components/menu/lista-jogador/lista-jog
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { MenuPrincipalComponent } from './components/menu/menu-principal/menu-principal.component';
+import { EventosDoJogoComponent } from './components/menu/eventos-do-jogo/eventos-do-jogo.component';
+import { loginGuard } from './auth/login.guard';
 
 
 export const routes: Routes = [
@@ -21,12 +23,14 @@ export const routes: Routes = [
 
   {path: "cadastro/jogos/:id", component: CadastroJogosComponent },
 
-  {path: "cadastro/jogos", component: CadastroJogosComponent },
+  {path: "cadastro/jogos", component: CadastroJogosComponent, canActivate: [loginGuard] },
 
   {path: "cadastro/jogador", component: CadastroJogadorComponent},
 
   {path: "cadastro/jogador/:id", component: CadastroJogadorComponent },
 
   {path: "lista/jogador", component: ListaJogadorComponent },
+
+  {path: "eventos/:id", component: EventosDoJogoComponent },
 
 ];

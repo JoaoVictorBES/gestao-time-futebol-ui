@@ -26,6 +26,12 @@ export class JogoService {
 
   }
 
+  lisJogadores(): Observable<any[]>{
+
+    return this.http.get<any[]>(`${this.API}/lista/jogador`);
+
+  }
+
   delete(id: number): Observable<void>{
 
     return this.http.delete<void>(`${this.API}/delete/${id}`);
@@ -41,5 +47,11 @@ export class JogoService {
   findById(id: number): Observable<Jogo> {
     return this.http.get<Jogo>(`${this.API}/${id}`);
   }
+
+  adicionarEvento(jogoId: number, evento: any): Observable<any> {
+    return this.http.post<any>(`${this.API}/eventos/${jogoId}`, evento);
+  }
+
+  
 
 }
