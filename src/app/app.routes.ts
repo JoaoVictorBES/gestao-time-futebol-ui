@@ -21,13 +21,13 @@ export const routes: Routes = [
 
   {path: "jogos/:id", component: ListaJogosComponent },
 
-  {path: "cadastro/jogos/:id", component: CadastroJogosComponent },
+  {path: "cadastro/jogos/:id", component: CadastroJogosComponent, canActivate: [loginGuard] },
 
   {path: "cadastro/jogos", component: CadastroJogosComponent, canActivate: [loginGuard] },
 
-  {path: "cadastro/jogador", component: CadastroJogadorComponent},
+  {path: "cadastro/jogador", component: CadastroJogadorComponent, canActivate: [loginGuard]},
 
-  {path: "cadastro/jogador/:id", component: CadastroJogadorComponent },
+  {path: "cadastro/jogador/:id", component: CadastroJogadorComponent, canActivate: [loginGuard] },
 
   {path: "lista/jogador", component: ListaJogadorComponent },
 

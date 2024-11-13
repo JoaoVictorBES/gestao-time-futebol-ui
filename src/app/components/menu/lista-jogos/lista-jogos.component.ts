@@ -10,7 +10,7 @@ import { LoginService } from '../../../auth/login.service';
 @Component({
   selector: 'app-lista-jogos',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
   templateUrl: './lista-jogos.component.html',
   styleUrl: './lista-jogos.component.scss'
 })
@@ -38,6 +38,7 @@ export class ListaJogosComponent {
      },
      error: erro => {
        console.error("Ocorreu algum erro")
+       alert ('Ufa');
      }
 
     })

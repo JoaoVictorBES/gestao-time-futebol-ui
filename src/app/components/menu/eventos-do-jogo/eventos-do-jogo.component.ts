@@ -1,11 +1,12 @@
 import { evento } from './../../../models/evento';
 import { JogadorService } from './../../../services/jogador.service';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { JogoService } from '../../../services/jogo.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Jogador } from '../../../models/jogador';
+import { Jogo } from '../../../models/jogo';
 
 @Component({
   selector: 'app-eventos-do-jogo',
@@ -18,13 +19,16 @@ export class EventosDoJogoComponent{
 
   jogoId!: number;
   jogadores: Jogador[] = [];
-  jogo: any = {};
-  eventos: any = {};
+  eventos: evento[] = [];
+
+  router = inject(Router);
 
   evento = {
     tipoEvento: '',
     jogadorId: null,
   };
+
+  jogo: Jogo = new Jogo();
 
   constructor(
 
@@ -79,7 +83,6 @@ export class EventosDoJogoComponent{
 
     this.jogoService.adicionarEvento(this.jogoId, novoEvento).subscribe({
       next:() =>{
-        this.eventos = evento;
         this.carregarJogo();
         this.evento = {tipoEvento: '', jogadorId: null}
       },
@@ -88,7 +91,31 @@ export class EventosDoJogoComponent{
       }
 
     });
-    
+
+  }
+
+  delete(id: number){
+
+    if (confirm('Tem certeza que deseja deletar este jogo?')) {
+      this.jogoService.delete(id).subscribe({
+        next: () => {
+          alert('Jogo deletado com sucesso!');
+        },
+        error: erro => {
+          console.error('Erro ao deletar o jogo', erro);
+          alert('Erro ao deletar o jogador');
+        }
+      });
+    }
+
+  }
+
+  update(jogo: Jogo){
+
+    this.router.navigate(['/cadastro/jogos/', jogo.id]);
+
   }
 
 }
+
+

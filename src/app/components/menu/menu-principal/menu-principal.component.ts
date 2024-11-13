@@ -24,4 +24,8 @@ export class MenuPrincipalComponent {
     this.router.navigate(['lista/jogador'])
   }
 
+  exit(rota: string){
+    this.router.navigate(['/login'])
+  }
+
 }

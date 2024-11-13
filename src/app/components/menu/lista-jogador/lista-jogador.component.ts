@@ -1,3 +1,4 @@
+import { LoginService } from './../../../auth/login.service';
 import { Component, inject } from '@angular/core';
 import { JogadorService } from '../../../services/jogador.service';
 import { Jogador } from '../../../models/jogador';
@@ -10,13 +11,15 @@ import { get } from 'http';
 @Component({
   selector: 'app-lista-jogador',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
   templateUrl: './lista-jogador.component.html',
   styleUrl: './lista-jogador.component.scss'
 })
 export class ListaJogadorComponent {
 
       JogadorService = inject(JogadorService);
+
+      loginService = inject(LoginService);
 
       jogadores: Jogador[] = [];
 
@@ -37,7 +40,7 @@ export class ListaJogadorComponent {
           this.jogadores = lista;
         },
         error: erro => {
-          alert('Ocorreu algum erro')
+          console.error('Deu ruim');
         }
 
         })

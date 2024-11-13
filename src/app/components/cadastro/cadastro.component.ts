@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { JogoService } from '../../services/jogo.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './cadastro.component.scss'
 })
 export class CadastroComponent {
+
+
+  ngOnInit(): void {
+
+  }
+
+
 
 }

@@ -1,13 +1,37 @@
-<!-- Exibe as informações do jogo -->
+
 <div class="jogo-info">
   <p><strong>Resultado:</strong> {{ jogo.resultado }}</p>
 </div>
 
+<form action="" class="event">
+  <div class="evento-form">
+    <label for="tipoEvento">Tipo de Evento:</label>
+    <select [(ngModel)]="evento.tipoEvento">
+      <option value="gol">Gol</option>
+      <option value="assistencia">Assistência</option>
+    </select>
+
+    <label for="jogadorId">Jogador:</label>
+    <select [(ngModel)]="evento.jogadorId">
+      <option *ngFor="let jogador of jogadores" [value]="jogador.id">{{ jogador.nome }}</option>
+    </select>
+
+    <button (click)="adicionarEvento()">Adicionar Evento</button>
+  </div>
+</form>
+
+
+
 <div class="eventos-lista">
   <h3>Eventos do Jogo</h3>
   <ul>
-    <li *ngFor="let evento of jogo.eventos">
+    <li *ngFor="let evento of eventos">
       {{ evento.tipoEvento }} por {{ evento.jogador.nome }}
     </li>
   </ul>
+</div>
+
+<div class="jogo-actions">
+  <button (click)="update(jogo)">Editar Jogo</button>
+  <button (click)="delete(jogo.id)">Deletar Jogo</button>
 </div>
