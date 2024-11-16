@@ -8,12 +8,15 @@ import { LoginComponent } from './components/login/login.component';
 import { MenuPrincipalComponent } from './components/menu/menu-principal/menu-principal.component';
 import { EventosDoJogoComponent } from './components/menu/eventos-do-jogo/eventos-do-jogo.component';
 import { loginGuard } from './auth/login.guard';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   {path: "login", component: LoginComponent },
+
+  {path: "cadastro/user", component: CadastroComponent},
 
   {path: "menu", component: MenuPrincipalComponent},
 

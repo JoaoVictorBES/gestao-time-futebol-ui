@@ -6,7 +6,7 @@ import { Router, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-menu-principal',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
   templateUrl: './menu-principal.component.html',
   styleUrl: './menu-principal.component.scss'
 })

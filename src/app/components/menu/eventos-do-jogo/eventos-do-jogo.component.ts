@@ -100,6 +100,7 @@ export class EventosDoJogoComponent{
       this.jogoService.delete(id).subscribe({
         next: () => {
           alert('Jogo deletado com sucesso!');
+          this.router.navigate(['/jogos']);
         },
         error: erro => {
           console.error('Erro ao deletar o jogo', erro);
