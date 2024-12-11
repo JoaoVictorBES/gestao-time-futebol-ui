@@ -12,8 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    RouterOutlet,
-    MatButtonModule
+    RouterOutlet
   ],
   providers: [provideHttpClient(withFetch())],
   bootstrap: []

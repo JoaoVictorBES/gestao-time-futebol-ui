@@ -5,5 +5,6 @@ export class Usuario {
   password!: string;
   email!: string;
   role!: string;
+  recoveryToken!: string ;
 }
 

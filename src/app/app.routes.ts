@@ -9,6 +9,8 @@ import { MenuPrincipalComponent } from './components/menu/menu-principal/menu-pr
 import { EventosDoJogoComponent } from './components/menu/eventos-do-jogo/eventos-do-jogo.component';
 import { loginGuard } from './auth/login.guard';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+
 
 
 export const routes: Routes = [
@@ -35,5 +37,7 @@ export const routes: Routes = [
   {path: "lista/jogador", component: ListaJogadorComponent },
 
   {path: "eventos/:id", component: EventosDoJogoComponent },
+
+  {path: "reset-password", component: ResetPasswordComponent}
 
 ];

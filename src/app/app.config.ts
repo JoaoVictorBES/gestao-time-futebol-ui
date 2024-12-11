@@ -10,6 +10,6 @@ import { meuhttpInterceptor } from './auth/http-interceptor.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(withFetch(), withInterceptors([meuhttpInterceptor])), provideRouter(routes), provideClientHydration(), provideAnimationsAsync()
+    provideHttpClient(withFetch(), withInterceptors([meuhttpInterceptor])), provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideAnimationsAsync('noop')
   ]
 };

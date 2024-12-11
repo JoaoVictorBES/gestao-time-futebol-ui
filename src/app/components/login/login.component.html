@@ -1,6 +1,5 @@
 <div class="login-container">
 
-  <h2>autentique-se</h2>
   <form (ngSubmit)="logar()">
     <div class="form-group">
       <label for="username">USUÁRIO</label>
@@ -9,9 +8,10 @@
     <div class="form-group">
       <label for="password">SENHA</label>
       <input type="password" id="password" [(ngModel)]="login.password" name="password" required />
+      <a href="/reset-password">Esqueceu a senha?</a>
     </div>
     <button type="submit">ENTRAR</button>
 
-    <a href="cadastro/user" class="cadastro">Cadastre-se aqui</a>
+    <a href="cadastro/user" class="cadastro">CADASTRE-SE</a>
   </form>
 </div>

@@ -70,3 +70,29 @@ h2{
   max-width: 100%;
   height: auto;
 }
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.login-container,
+.cadastro-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+.link-container {
+  margin-top: 16px;
+}
+
+a {
+  color: #3f51b5;
+  text-decoration: none;
+}
