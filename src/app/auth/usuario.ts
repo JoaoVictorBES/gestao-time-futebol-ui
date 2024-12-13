@@ -2,9 +2,8 @@
 export class Usuario {
   id!: number;
   username!: string;
-  password!: string;
   email!: string;
+  password!: string;
   role!: string;
-  recoveryToken!: string ;
 }
 

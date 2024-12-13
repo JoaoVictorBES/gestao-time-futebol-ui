@@ -1,6 +1,4 @@
 
-<body class="container">
-
   <div class="logo-container"></div>
 
   <div class="cadastro-container">
@@ -10,7 +8,7 @@
       <h3>Já é um membro?  <a href="/login"><b>Login</b></a> </h3>
     </div>
 
-    <form action="" class="form-container" (ngSubmit)="cadastrar()">
+    <form class="form-container" (ngSubmit)="cadastrar()" onsubmit="return false;">
 
       <div class="form-group">
         <p>Nome completo</p>
@@ -19,21 +17,22 @@
       </div>
 
       <div class="form-group">
-        <p>Senha</p>
-        <label for="senha" class="form-label"></label>
-        <input type="text" class="password" placeholder="Senha" required [(ngModel)]="usuario.password" name="password">
-      </div>
-
-      <div class="form-group">
         <p>E-mail</p>
         <label for="email" class="form-label"></label>
         <input type="text" class="email" placeholder="Email" required [(ngModel)]="usuario.email" name="email">
       </div>
 
+      <div class="form-group">
+        <p>Senha</p>
+        <label for="senha" class="form-label"></label>
+        <input type="text" class="password" placeholder="Senha" required [(ngModel)]="usuario.password" name="password">
+      </div>
+
+
       <button class="btn" type="submit">Cadastrar</button>
     </form>
   </div>
 
-</body>
+
 
 
