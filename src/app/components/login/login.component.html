@@ -1,17 +1,24 @@
 <div class="login-container">
+  <div class="login-header">
+    <h1>Bem-vindo!</h1>
+    <p>Faça login para acessar sua conta.</p>
+  </div>
 
-  <form (ngSubmit)="logar()">
+  <form (ngSubmit)="logar()" class="form-container">
     <div class="form-group">
-      <label for="username">USUÁRIO</label>
-      <input type="text" id="username" [(ngModel)]="login.username" name="username" required />
+      <label for="username">Usuário</label>
+      <input type="text" id="username" class="input-field" [(ngModel)]="login.username" name="username" placeholder="Digite seu usuário" required />
     </div>
     <div class="form-group">
-      <label for="password">SENHA</label>
-      <input type="password" id="password" [(ngModel)]="login.password" name="password" required />
-      <a href="/reset-password">Esqueceu a senha?</a>
+      <label for="password">Senha</label>
+      <input type="password" id="password" class="input-field" [(ngModel)]="login.password" name="password" placeholder="Digite sua senha" required />
+      <div class="link-container">
+        <a href="/reset-password">Esqueceu a senha?</a>
+      </div>
     </div>
-    <button type="submit">ENTRAR</button>
-
-    <a href="cadastro/user" class="cadastro">CADASTRE-SE</a>
+    <button type="submit" class="btn">Entrar</button>
+    <div class="link-container">
+      <p>Não tem uma conta? <a href="/cadastro/user" class="cadastro">Cadastre-se</a></p>
+    </div>
   </form>
 </div>
